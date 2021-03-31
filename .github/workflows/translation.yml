@@ -2,9 +2,9 @@ name: generate-translations
 
 on:
   workflow_dispatch:
-  schedule:
+  #schedule:
   # UTC, https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
-  - cron: '0/5 * * * *'
+  #- cron: '0/5 * * * *'
 
 jobs:
   generate-translations:
