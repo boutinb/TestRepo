@@ -1,0 +1,21 @@
+name: generate-translations
+
+on:
+  schedule:
+  # UTC, https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
+  - cron: "0 13 * * *"
+
+jobs:
+  generate-translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "3.6.1"
+
+      - uses: jasp-stats/jasp-actions/translations@translations
