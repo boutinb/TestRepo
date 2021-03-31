@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
   # UTC, https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
-  - cron: "0 13 * * *"
+  - cron: '0/1 * * * *'
 
 jobs:
   generate-translations:
