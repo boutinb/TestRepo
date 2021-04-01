@@ -4,7 +4,7 @@ description: 'Updates the translation files that live within the /po folder.'
 runs:
   using: "composite"
   steps:
-
+    - run: echo "Repo: $GITHUB_REPOSITORY"
     - name: Find and merge weblate pull requests
       run: ${{ github.action_path }}/findAndMergeWeblate.sh ${{GITHUB_REPOSITORY}}
       shell: bash
