@@ -19,5 +19,5 @@ jobs:
         with:
           r-version: "3.6.1"
 
-      - uses: boutinb/TestRepo/translations
+      - uses: boutinb/TestRepo/translations@master
 
