@@ -9,5 +9,5 @@ runs:
         echo "Tags" 
       
     - name: Find and merge weblate pull requests
-      run: ${{ github.action_path }}/findAndMergeWeblate.sh ${{GITHUB_REPOSITORY}}
+      run: ${{ github.action_path }}/findAndMergeWeblate.sh $GITHUB_REPOSITORY
       shell: bash
