@@ -1,1 +1,1 @@
-echo "HALLO SHELL"
+echo "HALLO SHELL $1!!"
