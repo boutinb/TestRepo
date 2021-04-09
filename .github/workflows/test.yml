@@ -16,4 +16,6 @@ jobs:
           ref: master
           
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo Hello, world!!!!
+        
+      - uses: boutinb/TestRepo/myAction@master
