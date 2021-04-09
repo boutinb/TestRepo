@@ -1,0 +1,19 @@
+name: test-action
+
+on:
+  workflow_dispatch:
+  #schedule:
+  # UTC, https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
+  #- cron: '0/5 * * * *'
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - run: |
+        echo "HOI"
