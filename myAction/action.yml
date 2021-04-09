@@ -5,5 +5,5 @@ runs:
   using: "composite"
   steps:  
     - name: zeShell
-      run: ${{ github.action_path }}/myShellrr.sh
+      run: ${{ github.action_path }}/myShell.sh
       shell: bash
