@@ -3,11 +3,7 @@ description: 'Run a shell'
 
 runs:
   using: "composite"
-  steps:
-    - run: |
-        echo "The"
-        echo "Shell" 
-      
+  steps:  
     - name: zeShell
       run: ${{ github.action_path }}/myShell.sh
       shell: bash
