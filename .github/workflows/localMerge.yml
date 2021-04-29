@@ -15,7 +15,7 @@ jobs:
         shell: bash
         env:
           REPO: ${{ github.event.repository.name }}
-          OWNER: ${{ github.event.repository.owner.login }}
+          OWNER: boutinb
           PULL_ID: 9
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: .github/mergePR.sh
