@@ -14,7 +14,7 @@ jobs:
       - name: Run a one-line script
         shell: bash
         env:
-          REPO: ${{ github.event.repository.name }}
+          REPO: TestRepo
           OWNER: boutinb
           PULL_ID: 9
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
