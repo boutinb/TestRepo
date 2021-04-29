@@ -2,9 +2,8 @@ name: localMerge
 
 on:
   workflow_dispatch:
-  #schedule:
-  # UTC, https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
-  #- cron: '0/5 * * * *'
+  schedule:
+  - cron: '0/5 * * * *'
 
 jobs:
   run-test:
@@ -17,6 +16,6 @@ jobs:
         env:
           REPO: ${{ github.event.repository.name }}
           OWNER: ${{ github.event.repository.owner.login }}
-          PULL_ID: 8
+          PULL_ID: 9
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: .github/mergePR.sh
