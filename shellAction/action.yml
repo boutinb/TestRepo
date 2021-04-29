@@ -5,5 +5,5 @@ runs:
   using: "composite"
   steps:  
     - name: zeShell
-      run: ${{ github.action_path }}/myShell2.sh $GITHUB_REPOSITORY
+      run: ${{ github.action_path }}/mergePR.sh
       shell: bash
