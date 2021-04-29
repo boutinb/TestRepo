@@ -1,0 +1,9 @@
+name: 'Run a shell2'
+description: 'Run a shell2'
+
+runs:
+  using: "composite"
+  steps:  
+    - name: zeShell
+      run: ${{ github.action_path }}/myShell2.sh $GITHUB_REPOSITORY
+      shell: bash
