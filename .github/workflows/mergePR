@@ -1,0 +1,14 @@
+name: merge Pull Request
+on:
+  workflow_dispatch:
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        env:
+          REPO: ${{ github.event.repository.name }}
+          OWNER: ${{ github.event.repository.owner.login }}
+          PULL_ID: 1
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: boutinb/TestRepo/shellAction@master
