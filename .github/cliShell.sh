@@ -15,7 +15,7 @@ then
   echo "No Pull Request"
 else
   echo "Pull Request ID: $pr_number"
-  echo $("gh pr merge --squash $pr_number -R $owner_repo")
+  echo $(gh pr merge --squash $pr_number -R $owner_repo)
   
   pr_number="$(getPRNumber)"
   if [ -z "$pr_number" ]
@@ -23,6 +23,6 @@ else
     echo "No other Pull Request"
   else
     echo "2nd Pull Request ID: $pr_number"
-    echo $("gh pr merge --squash $pr_number -R $owner_repo")
+    echo $(gh pr merge --squash $pr_number -R $owner_repo)
   fi
 fi
