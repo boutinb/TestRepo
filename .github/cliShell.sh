@@ -1,8 +1,8 @@
 owner_repo="$1"
 author='weblate'
-cli_reply=$(gh pr list -R $owner_repo)
+pr_list=$(gh pr list -R $owner_repo)
 echo "$cli_reply"
-first_line=$(echo "$test" | sed -n '1p')
+first_line=$(echo "$pr_list" | sed -n '1p')
 echo "$first_line"
 pr_number=$(echo "$first_line" | grep -oE '^[0-9]+')
 echo "$pr_number"
