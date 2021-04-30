@@ -1,9 +1,29 @@
 owner_repo="$1"
 author='weblate'
-pr_list=$(gh pr list -R $owner_repo)
-echo "$cli_reply"
-first_line=$(echo "$pr_list" | sed -n '1p')
-echo "$first_line"
-pr_number=$(echo "$first_line" | grep -oE '^[0-9]+')
-echo "$pr_number"
-gh pr merge --squash $pr_number -R $owner_repo
+
+function getPRNumber()
+{ 
+  pr_list=$(gh pr list -R $owner_repo)
+  first_line=$(echo "$pr_list" | sed -n '1p')
+  echo "$first_line"
+  local pr_number=$(echo "$first_line" | grep -oE '^[0-9]+')
+  echo "$pr_number"
+}
+
+pr_number="$(getPRNumber)"
+if [ -z "$pr_number" ]
+then
+  echo "No Pull Request"
+else
+  echo "Pull Request ID: $pr_number"
+  echo "gh pr merge --squash $pr_number -R $owner_repo"
+  
+  pr_number="$(getPRNumber)"
+  if [ -z "$pr_number" ]
+  then
+    echo "No other Pull Request"
+  else
+    echo "2nd Pull Request ID: $pr_number"
+    echo "gh pr merge --squash $pr_number -R $owner_repo"
+  fi
+fi
