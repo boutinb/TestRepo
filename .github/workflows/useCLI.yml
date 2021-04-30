@@ -14,4 +14,4 @@ jobs:
       - name: Run a one-line script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr list
+        run: .github/cliShell.sh
