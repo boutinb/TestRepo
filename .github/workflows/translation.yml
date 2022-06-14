@@ -13,11 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          token: ${{ secrets.REPO_KEY }}
 
       - uses: r-lib/actions/setup-r@master
         with:
-          r-version: "3.6.1"
+          r-version: "4.1.0"
 
-      - uses: boutinb/TestRepo/translations@master
-
+      - uses: boutinb/jasp-actions/translations@master
