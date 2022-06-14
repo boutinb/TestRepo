@@ -9,7 +9,8 @@ on:
 jobs:
   generate-translations:
     runs-on: ubuntu-latest
-
+    env:
+      GITHUB_TOKEN: ${{ secrets.REPO_KEY }}
     steps:
       - uses: actions/checkout@v2
         with:
